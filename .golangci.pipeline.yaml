@@ -1,4 +1,4 @@
-# More info on config here: https://golangci-lint.run/usage/configuration/#config-file
+# .golangci.pipeline.yaml
 run:
   concurrency: 8
   timeout: 10m
@@ -13,7 +13,8 @@ output:
 
 linters-settings:
   govet:
-    check-shadowing: true
+    enable:
+      - shadow
   dupl:
     threshold: 100
   goconst:
@@ -36,7 +37,7 @@ linters:
 issues:
   exclude-use-default: false
   exclude:
-    - G104 # _ instead of err checks
+    - G104
     - exported func .* returns unexported type .*, which can be annoying to use
     - should have a package comment
     - don't use an underscore in package name
