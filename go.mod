@@ -1,4 +1,4 @@
-module chat
+module github.com/Aenstein/chat-server
 
 go 1.23.2
 
